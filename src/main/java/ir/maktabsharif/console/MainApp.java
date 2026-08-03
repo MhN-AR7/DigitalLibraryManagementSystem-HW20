@@ -135,6 +135,7 @@ public class MainApp {
                     break;
                 case 5:
                     PersistenceContextTest.test();
+                    break;
                 case 0:
                     System.out.println("Exiting Program...");
                     HibernateUtil.closeEmf();
