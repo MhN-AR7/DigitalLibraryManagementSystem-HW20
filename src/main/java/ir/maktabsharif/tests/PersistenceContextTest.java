@@ -35,9 +35,10 @@ public class PersistenceContextTest {
         System.out.println(BOOK);
         tx.commit();
         tx.begin();
-        em.merge(BOOK);
+        Book managedBook = em.merge(BOOK);
         System.out.println("--- Merged ---");
-        System.out.println("Book is in Persistence Context: " + em.contains(BOOK));
+        System.out.println("Original Book is in Persistence Context: " + em.contains(BOOK));
+        System.out.println("Managed Book is in Persistence Context: " + em.contains(managedBook));
         tx.commit();
     }
 }
