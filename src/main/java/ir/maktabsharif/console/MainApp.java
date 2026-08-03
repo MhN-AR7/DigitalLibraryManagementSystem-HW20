@@ -6,6 +6,7 @@ import ir.maktabsharif.model.Book;
 import ir.maktabsharif.model.PublisherAddress;
 import ir.maktabsharif.service.book.BookService;
 import ir.maktabsharif.service.book.impl.BookServiceImpl;
+import ir.maktabsharif.tests.PersistenceContextTest;
 import ir.maktabsharif.util.HibernateUtil;
 
 import java.math.BigDecimal;
@@ -23,6 +24,7 @@ public class MainApp {
                     2. Find Book By ID
                     3. Update Book
                     4. Delete Book
+                    5. Entity Life Cycle Test
                     0. Exit
                     """);
 
@@ -131,6 +133,8 @@ public class MainApp {
                         System.err.println(e.getMessage());
                     }
                     break;
+                case 5:
+                    PersistenceContextTest.test();
                 case 0:
                     System.out.println("Exiting Program...");
                     HibernateUtil.closeEmf();
