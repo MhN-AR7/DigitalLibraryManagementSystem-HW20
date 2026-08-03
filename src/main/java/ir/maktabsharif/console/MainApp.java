@@ -62,6 +62,7 @@ public class MainApp {
                     catch (BusinessException e) {
                         System.err.println(e.getMessage());
                     }
+                    break;
                 case 2:
                     try {
                         System.out.println("\n----- Finding Book By ID ------\n");
@@ -74,6 +75,7 @@ public class MainApp {
                     catch (BusinessException e) {
                         System.err.println(e.getMessage());
                     }
+                    break;
                 case 3:
                     try {
                         System.out.println("\n------ Updating Book ------\n");
@@ -113,6 +115,7 @@ public class MainApp {
                     catch (BusinessException e) {
                         System.err.println(e.getMessage());
                     }
+                    break;
                 case 4:
                     try {
                         System.out.println("\n------ Deleting Book ------\n");
@@ -127,6 +130,7 @@ public class MainApp {
                     catch (BusinessException e) {
                         System.err.println(e.getMessage());
                     }
+                    break;
                 case 0:
                     System.out.println("Exiting Program...");
                     HibernateUtil.closeEmf();
