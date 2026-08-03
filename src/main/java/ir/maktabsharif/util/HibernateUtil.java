@@ -27,9 +27,8 @@ public class HibernateUtil {
 
     public static <T> T inTxResult(Function<EntityManager, T> operation) {
         EntityManager em = getEm();
-        EntityTransaction tx = null;
-        try (em) {
-            tx = em.getTransaction();
+        EntityTransaction tx = em.getTransaction();
+        try {
             tx.begin();
             T result = operation.apply(em);
             tx.commit();
@@ -37,6 +36,9 @@ public class HibernateUtil {
         } catch (RuntimeException e) {
             if (tx != null && tx.isActive()) tx.rollback();
             throw e;
+        }
+        finally {
+            em.close();
         }
     }
 }
