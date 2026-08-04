@@ -18,7 +18,7 @@ public class Book extends BaseModel<Long> {
     @Column(name = "published_year")
     private int publishedYear;
 
-    @Column(nullable = false, columnDefinition = "check price > 0")
+    @Column(nullable = false)
     private BigDecimal price;
 
     @Enumerated(EnumType.STRING)

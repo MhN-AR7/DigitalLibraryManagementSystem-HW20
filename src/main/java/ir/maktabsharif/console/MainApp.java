@@ -26,6 +26,8 @@ public class MainApp {
                     4. Delete Book
                     5. Entity Life Cycle Test
                     0. Exit
+                    
+                    Choose an Option:
                     """);
 
             int choice = scanner.nextInt();
