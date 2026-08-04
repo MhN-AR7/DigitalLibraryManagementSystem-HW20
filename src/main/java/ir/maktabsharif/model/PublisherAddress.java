@@ -5,9 +5,13 @@ import jakarta.persistence.Embeddable;
 
 @Embeddable
 public class PublisherAddress {
+    @Column(nullable = false)
     private String city;
+
+    @Column(nullable = false)
     private String street;
-    @Column(name = "postal_code")
+
+    @Column(nullable = false, name = "postal_code")
     private String postalCode;
 
     public PublisherAddress() {

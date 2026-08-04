@@ -9,13 +9,21 @@ import java.math.RoundingMode;
 @Entity
 @Table(name = "books")
 public class Book extends BaseModel<Long> {
+    @Column(nullable = false)
     private String title;
+
+    @Column(nullable = false, unique = true)
     private String isbn;
+
     @Column(name = "published_year")
     private int publishedYear;
+
+    @Column(nullable = false, columnDefinition = "check price > 0")
     private BigDecimal price;
+
     @Enumerated(EnumType.STRING)
     private StockStatus status;
+
     @Embedded
     private PublisherAddress publisherAddress;
 
